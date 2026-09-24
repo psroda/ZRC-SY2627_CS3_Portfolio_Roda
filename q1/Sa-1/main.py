@@ -17,7 +17,7 @@ class AssignmentSubmission:
 
     def __duplicate(self, filename: str):
         if filename in self.__submitted_files:
-            print(f"--> [Success] '{filename}' is already attached!")
+            print(f"--> [Success] {filename} is already attached!")
             return True
         return False
 
@@ -26,7 +26,7 @@ class AssignmentSubmission:
             return
         self.__submitted_files.append(filename)
         self.__is_submitted = True
-        print(f"--> [Success] {self.student_name} attached '{filename}'. Total files: {len(self.__submitted_files)}")
+        print(f"--> [Success] {self.student_name} attached {filename}. Total files: {len(self.__submitted_files)}")
 
     def remove_file(self, filename):
         if self.__grade is not None:
@@ -36,9 +36,9 @@ class AssignmentSubmission:
             self.__submitted_files.remove(filename)
             if not self.__submitted_files:
                 self.__is_submitted = False
-            print(f"--> [Success] {self.student_name} removed '{filename}'.")
+            print(f"--> [Success] {self.student_name} removed {filename}.")
         else:
-            print(f"File '{filename}' not found in the submission.")
+            print(f"File {filename} not found in the submission.")
 
     def assign_grade(self, score: float):
         if not self.__check_submission_status():
@@ -51,7 +51,7 @@ class AssignmentSubmission:
         return self.__grade
 
     def view_files(self):
-        return ", ".join(f"'{filename}'" for filename in self.__submitted_files)
+        return ", ".join(f"{filename}" for filename in self.__submitted_files)
 
     def get_detailed_report(self):
         status = "Submitted" if self.__is_submitted else "Not Submitted"
