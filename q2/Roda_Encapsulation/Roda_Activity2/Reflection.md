@@ -1,0 +1,3 @@
+How does using @property make your code easier to read compared to using traditional get_ and set_ methods?
+
+    Using @property makes the code easier to read because we can access and update private attributes like regular variables without calling separate getter and setter methods. It also allows us to validate values before changing them, which helps protect the data and keeps the code organized.
