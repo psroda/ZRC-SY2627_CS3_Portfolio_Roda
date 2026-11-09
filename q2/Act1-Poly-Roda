@@ -1,0 +1,24 @@
+class Patient:
+    def display_patient_type(self):
+        print("Patient Type: Regular Patient")
+
+
+class SeniorPatient(Patient):
+    def display_patient_type(self):
+        print("Patient Type: Senior Citizen")
+
+
+class PhilhealthPatient(Patient):
+    def display_patient_type(self):
+        print("Patient Type: PhilHealth Member")
+
+
+# Creating objects
+patient1 = Patient()
+patient2 = SeniorPatient()
+patient3 = PhilhealthPatient()
+
+# Displaying patient types
+patient1.display_patient_type()
+patient2.display_patient_type()
+patient3.display_patient_type()
